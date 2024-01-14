@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout github code') {
+            steps {
+                echo 'Hello World'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '1f1aa183-2e76-46b5-846a-5bf1644b5854', url: 'https://github.com/Nil-kom2710/ethaans_devops.git']])
+            }
+        }
+        
+          
+        stage('Build code') {
+            steps {
+                echo 'Hello new World'
+            }
+        }
+        
+          
+        stage('Deploy') {
+            steps {
+                echo 'Hello new World'
+            }
+        }
+        
+    }
+}
